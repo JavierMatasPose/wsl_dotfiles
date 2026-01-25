@@ -16,7 +16,6 @@ sudo apt install zsh -y
 chsh -s $(which zsh)
 # Note: You may need to restart your terminal for the change to take effect.
 ```
-
 ### 3. Install Homebrew
 Package manager for Linux/WSL.
 
@@ -32,7 +31,6 @@ Install Neovim, Node.js, Tmux, and other essentials.
 ```bash
 brew install neovim tmux node ripgrep fzf bat bun
 ```
-
 ### 5. Setup UV and Python
 Install uv, an extremely fast Python package manager and resolver.
 
@@ -63,7 +61,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
-
 ### 8. Setup Tmux
 Install the Tmux Plugin Manager.
 
@@ -71,7 +68,6 @@ Install the Tmux Plugin Manager.
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # To install plugins later, open tmux and press: prefix + I (Capital I)
 ```
-
 ### 9. (Optional) UI & Terminal
 Powerlevel10k Prompt:
 
@@ -80,4 +76,14 @@ git clone --depth=1 [https://github.com/romkatv/powerlevel10k.git](https://githu
 # 1. Set ZSH_THEME="powerlevel10k/powerlevel10k" in your .zshrc
 # 2. Restart Zsh and run: p10k configure
 ```
+# Applying the Dotfiles
+
+```bash
+git clone [https://github.com/JavierMatasPose/wsl_dotfiles.git](https://github.com/JavierMatasPose/wsl_dotfiles.git) ~/dotfiles:
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/.p10k.zsh ~/.p10k.zsh
+ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+# Removing default nvim config
+rm -rf ~/.config/nvim
+ln -sf ~/dotfiles/nvim.bak ~/.config/nvim
 
