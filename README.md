@@ -38,17 +38,17 @@ Install uv, an extremely fast Python package manager and resolver.
 curl -LsSf https://astral.sh/uv/install.sh | sh
 # UV will handle Python versions automatically
 ```
-### 6. Setup Neovim (NvChad)
+### 6. Setup Neovim (Kickstart)
 Make sure you have a Nerd Font installed in your Windows Terminal before this step.
-Check https://github.com/nvim-lua/kickstart.nvim instead of NvChad
+This dotfiles repo ships its own `nvim/` config based on https://github.com/nvim-lua/kickstart.nvim
 
 ```bash
 # Backup existing config if present
 mv ~/.config/nvim ~/.config/nvim.bak
 mv ~/.local/share/nvim ~/.local/share/nvim.bak
-# Clone NvChad starter repo
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-# Open nvim; NvChad will install plugins automatically on first launch
+# (Optional) Start fresh from upstream Kickstart
+git clone https://github.com/nvim-lua/kickstart.nvim.git ~/.config/nvim
+# Open nvim; lazy.nvim will install plugins automatically on first launch
 nvim
 ```
 ### 7. Setup ZSH (Oh My Zsh + Plugins)
@@ -72,18 +72,18 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 Powerlevel10k Prompt:
 
 ```bash
-git clone --depth=1 [https://github.com/romkatv/powerlevel10k.git](https://github.com/romkatv/powerlevel10k.git) ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 # 1. Set ZSH_THEME="powerlevel10k/powerlevel10k" in your .zshrc
 # 2. Restart Zsh and run: p10k configure
 ```
 # Applying the Dotfiles
 
 ```bash
-git clone [https://github.com/JavierMatasPose/wsl_dotfiles.git](https://github.com/JavierMatasPose/wsl_dotfiles.git) ~/dotfiles:
+git clone https://github.com/JavierMatasPose/wsl_dotfiles.git ~/dotfiles
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 # Removing default nvim config
 rm -rf ~/.config/nvim
-ln -sf ~/dotfiles/nvim.bak ~/.config/nvim
-
+ln -sf ~/dotfiles/nvim ~/.config/nvim
+```
