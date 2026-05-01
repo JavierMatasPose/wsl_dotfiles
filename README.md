@@ -38,18 +38,19 @@ Install uv, an extremely fast Python package manager and resolver.
 curl -LsSf https://astral.sh/uv/install.sh | sh
 # UV will handle Python versions automatically
 ```
-### 6. Setup Neovim (Kickstart)
+### 6. Setup Neovim (Kickstart + custom overlay)
 Make sure you have a Nerd Font installed in your Windows Terminal before this step.
-This dotfiles repo ships its own `nvim/` config based on https://github.com/nvim-lua/kickstart.nvim
+This repo only stores files I customized on top of upstream kickstart.nvim:
+`init.lua`, `lazy-lock.json`, and `lua/custom/plugins/*`.
 
 ```bash
 # Backup existing config if present
-mv ~/.config/nvim ~/.config/nvim.bak
-mv ~/.local/share/nvim ~/.local/share/nvim.bak
-# (Optional) Start fresh from upstream Kickstart
+mv ~/.config/nvim ~/.config/nvim.bak 2>/dev/null
+mv ~/.local/share/nvim ~/.local/share/nvim.bak 2>/dev/null
+# Clone upstream kickstart
 git clone https://github.com/nvim-lua/kickstart.nvim.git ~/.config/nvim
-# Open nvim; lazy.nvim will install plugins automatically on first launch
-nvim
+# Overlay this repo's customizations (see "Applying the Dotfiles" below)
+nvim  # lazy.nvim installs plugins on first launch
 ```
 ### 7. Setup ZSH (Oh My Zsh + Plugins)
 Install the framework and essential plugins (autosuggestions and syntax highlighting).
@@ -83,7 +84,10 @@ git clone https://github.com/JavierMatasPose/wsl_dotfiles.git ~/dotfiles
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
-# Removing default nvim config
-rm -rf ~/.config/nvim
-ln -sf ~/dotfiles/nvim ~/.config/nvim
+# Overlay nvim customizations on top of upstream kickstart (cloned in step 6)
+ln -sf ~/dotfiles/nvim/init.lua ~/.config/nvim/init.lua
+ln -sf ~/dotfiles/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json
+mkdir -p ~/.config/nvim/lua/custom/plugins
+ln -sf ~/dotfiles/nvim/lua/custom/plugins/oil.lua ~/.config/nvim/lua/custom/plugins/oil.lua
+ln -sf ~/dotfiles/nvim/lua/custom/plugins/fugitive.lua ~/.config/nvim/lua/custom/plugins/fugitive.lua
 ```
