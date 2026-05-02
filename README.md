@@ -110,8 +110,3 @@ The `cheatsheet.md` contains keybindings and commands reference. To make the sho
    mkdir -p ~/etc
    cp ~/dotfiles/cheatsheet.md ~/etc/cheatsheet.md
    ```
-
-**Note:** The aliases in `.zshrc` like `bpill`, `bonsai`, `ecs`, and `ezsh` require specific tools:
-- `bpill`: requires `cmatrix` (install via `brew install cmatrix`)
-- `bonsai`: requires `cbonsai` (install via `brew install cbonsai`)
-- `ecs`: opens cheatsheet in Neovim (assumes `nvim` is installed)
