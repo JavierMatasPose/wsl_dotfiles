@@ -91,3 +91,27 @@ mkdir -p ~/.config/nvim/lua/custom/plugins
 ln -sf ~/dotfiles/nvim/lua/custom/plugins/oil.lua ~/.config/nvim/lua/custom/plugins/oil.lua
 ln -sf ~/dotfiles/nvim/lua/custom/plugins/fugitive.lua ~/.config/nvim/lua/custom/plugins/fugitive.lua
 ```
+
+### Cheatsheet Setup
+The `cheatsheet.md` contains keybindings and commands reference. To make the shortcuts work:
+
+1. **View cheatsheet** (requires `bat` installed):
+   ```bash
+   cat ~/dotfiles/cheatsheet.md
+   ```
+
+2. **Edit cheatsheet** (shortcut alias):
+   ```bash
+   ecs  # Opens ~/etc/cheatsheet.md in Neovim
+   ```
+
+3. **Setup the cheatsheet location** (if needed):
+   ```bash
+   mkdir -p ~/etc
+   cp ~/dotfiles/cheatsheet.md ~/etc/cheatsheet.md
+   ```
+
+**Note:** The aliases in `.zshrc` like `bpill`, `bonsai`, `ecs`, and `ezsh` require specific tools:
+- `bpill`: requires `cmatrix` (install via `brew install cmatrix`)
+- `bonsai`: requires `cbonsai` (install via `brew install cbonsai`)
+- `ecs`: opens cheatsheet in Neovim (assumes `nvim` is installed)
