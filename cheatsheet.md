@@ -55,6 +55,12 @@
 | code, indent to righ or left | `>g` or `G` and `<g` or `G` |
 | code, format code | `<space>fm` |
 | git, telescope commits (checkout to that commit) | `spc cm` |
+| buffers, see open buffers | `:ls` |
+| buffers, go to next or prev buffers | `:bnext or :bprev` |
+| tabs, open tab | `:tabedit` |
+| tabs, go to next or prev tab | `gt or gT` |
+| commands, list prev commands | `q:` |
+| commands, repeat prev command | `@:` |
 
 ## NVIM - QUICKFIX LIST
 | Action | Command / Keybinding |
