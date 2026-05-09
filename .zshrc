@@ -126,6 +126,7 @@ alias fv='nvim $(fzf --preview="batcat --color=always {}")'
 alias tmuxg='ghostty -e tmux'
 alias ralph="gemini -s --yolo"
 alias eghsty="nvim ~/.config/ghostty/config"
+alias gaa='git add --all'
 
 # Git
 alias gs='git status'

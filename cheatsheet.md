@@ -20,35 +20,21 @@
 ## NVIM
 | Action | Command / Keybinding |
 | :--- | :--- |
-| mark file | `m` |
-| search for file | `spc f f` |
-| cheatsheet | `spc c h` |
 | vertical and horizontal split | `:vps` and `:sp` |
-| show numbers | `spc n` |
-| search, text | `/texto_a_buscar` (n for next, N for prev) |
 | search, word over cursor | `*` |
 | comment python | visual mode, select line(s) and `gc` |
-| refresh NVIM | `:e!` (current), `:bufdo e!` (all buffers) |
 | go to end and beguining of line | `$` and `0` |
 | go to next function | `]m` (start) `]M` (end) |
 | go to prev function start | `[m` (start) `[M` (end) |
 | go to next and prev section | `]]` and `[[` |
-| find, first char | `fchar` |
 | find, repeat last search and go back | `;` and `,` |
-| create new line below and above | `o` and `O` |
 | move to a line | `number g` |
 | check current line | `ctrl+g` |
 | substitute word | `:s/old/new` |
 | substitute word in the whole line (globally) | `:s/old/new/g` |
 | substitute word in the whole file | `:%s/old/new` |
 | Telescope keymaps | `:Telescope keymaps` |
-| Telescope, find help | `<space>fh` | 
-| Telescope, find nvim config| `<space>fc` |
-| Telescope, grep word | `<space>fw` |
 | Telescope, quick fix list | `<C-q>` |
-| search text | `/texto_a_buscar` . Siguiente con n para siguiente y N para anterior |
-| terminal, open terminal | `spc v` (vertical term) or `spc h` (horizontal) |
-| terminal, open floating terminal | `alt+i` |
 | code, go to definition | `gd` # se mete en la función |
 | code, search work in files (list references) | `gr r` |
 | code, auto indent to righ | (gg - go to top) `=G` (indent till last line) |
@@ -74,7 +60,7 @@
 | Go to item number | `:cc [N]` (or `<CR>` inside list) |
 | Older list | `:colder` |
 | Newer list | `:cnewer` |
-| Run cmd on all items | `:cdo <cmd>` |
+| Run cmd on all items | `:cdo <cmd> ej: :cdo s/old/new/gc` |
 | Run cmd on all files | `:cfdo <cmd>` |
 | **Populate / Add** | |
 | Search pattern (current file) | `:vimgrep /pat/ %` |
@@ -86,7 +72,7 @@
 | **Manage / Remove** | |
 | Clear list | `:cexpr []` |
 | Filter (keep pattern) | `:Cfilter /pat/` (needs `packadd cfilter`) |
-| Filter (drop pattern) | `:Cfilter! /pat/` (needs `packadd cfilter`) |
+| Filter (drop pattern), remove file from list | `:Cfilter! /pat/` (needs `packadd cfilter`) |
 
 ## NVIM - FUGITIVE (Git)
 | Action | Command / Keybinding |
