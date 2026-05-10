@@ -36,6 +36,7 @@ vim.o.confirm = true
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<C-e>', '<CMD>e .<CR>')
 vim.diagnostic.config {
   update_in_insert = false,
   severity_sort = true,

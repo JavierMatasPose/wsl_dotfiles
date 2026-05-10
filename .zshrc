@@ -124,14 +124,11 @@ alias ecs="nvim ~/etc/cheatsheet.md"
 alias ezsh="nvim ~/.zshrc"
 alias fv='nvim $(fzf --preview="batcat --color=always {}")'
 alias tmuxg='ghostty -e tmux'
-alias ralph="gemini -s --yolo"
 alias eghsty="nvim ~/.config/ghostty/config"
-alias gaa='git add --all'
 
 # Git
 alias gs='git status'
 alias ga='git add'
-alias gaa='git add --all'
 alias gc='git commit -m'
 alias gca='git commit -am'
 alias gco='git checkout'
